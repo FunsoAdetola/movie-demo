@@ -1,38 +1,177 @@
-.App {
+/* .App{
+  height: 100vh;
+} */
+.nav{
+  background-color: #1f6f8b;
+  color: #fff;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+}
+.nav-link{
+  padding: 0 1rem;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+}
+.nav-link:hover{
+border-bottom: 2px solid #fff;
+padding-bottom: 0.5rem;
+
+
+
+}
+.header{
+  background: transparent;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  height: 60px;
+  color: #fff;
+}
+.home{
+  background-image: url("https://cdn.hipwallpaper.com/i/98/21/dUyCkp.jpg");
+  background-position-x: -400px;
+  height:auto; 
+}
+.main{
+  background-color:  rgba(0, 0, 0, 0.8);
+  min-height: 100%;
+  padding-bottom: 5rem;
+}
+.home-content{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  
+}
+.home-card{
+  border: 5px solid white;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 200px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  transition: all .2s ease-in-out;
+   
+}
+.home-card:hover{
+  transform: scale(1.1);
+}
+.home-card-link{
+  text-decoration: none;
+  color: #1f6f8b;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.movie-page{
+  color: #fff;
+  text-align: center;
+  /* height: calc( 100vh - 60px); */
+ }
+ .back-btn{
+   text-decoration: none;
+   border-radius: 20px;
+   padding:8px 25px;
+   background-color: #fff;
+   color: #23120b;
+   font-weight: bold;
+ }
+ .loading{
+   height: 100vh;
+ }
+.poster-image{
+  width:100%;
+  height: 100%; 
+}
+h3{
+  margin-top: 0.2rem;
+}
+.card{
+height: 350px;
+display: grid;
+grid-template-rows:85% 15%;
+background-color: #214252;
+border: 1px solid #1f6f8b;
+transition: all .2s ease-in-out;
+cursor: pointer;
+}
+.card:hover{
+  transform: scale(1.01);
+}
+.series-list{
+  width: 90vw;
+  margin: 2rem auto;
+  padding: 1rem 0;
+  max-width: 1170px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-column-gap: 2rem;
+  grid-row-gap: 2.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.footer{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: left;
+  padding: 2rem;
+ background-color:#1f6f8b ;
+ color: #fff;
+}
+.footer ul{
+  margin: 0;
+  padding-inline-start:0;
+  text-align: left;
+}
+.footer li{
+  margin: 1rem 0;
+ list-style: none;
+}
+.footer a{
+ text-decoration: none;
+ color: #fff;
+}
+.brand{
+  font-family: 'Ubuntu', sans-serif;
+    font-size: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media(max-width:768px){
+  .home-content{
+    display: block;
+    margin: auto;
+    text-align: center;
+    
   }
-  to {
-    transform: rotate(360deg);
+  .header{
+    padding: 1rem;
+  }
+  .home{
+    height: auto;
+  }
+  .home-card{
+    margin:  1rem auto;
+  }
+  .series-list{
+    grid-template-columns:(200px, 1fr);
+  }
+  .brand{
+    font-size: 20px;
+  }
+  .footer{
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 2rem 0;
+  }
+  .footer ul{
+    text-align: center;
   }
 }
