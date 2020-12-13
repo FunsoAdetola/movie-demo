@@ -7,7 +7,10 @@ export default function Nav() {
         <div className="nav">
            <div className="brand">Movie Stream</div>
            <div className="middle">
-           <Link className="nav-link" to="/movies">
+           <Link className="nav-link" to="/">
+                 <span>Home</span>
+             </Link> 
+             <Link className="nav-link" to="/movies">
                  <span>Movies</span>
              </Link> 
              <Link className="nav-link" to="/series">

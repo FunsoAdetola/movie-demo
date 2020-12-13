@@ -6,19 +6,19 @@ export default function Footer() {
            <div className="brand left">Movie Stream</div>
            <div className="center">
               <ul>
-                <li> <a href="#">About Us</a></li>
-                <li><a href="#">Contact</a> </li>
-                <li><a href="#">Blog</a> </li>
+                <li> About Us</li>
+                <li>Contact</li>
+                <li>Blog</li>
               </ul>
             </div>
             <div className="right">
               <ul>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Support</a> </li>
-                <li><a href="#">Privacy Policy</a></li>
+                <li>Careers</li>
+                <li>Support</li>
+                <li>Privacy Policy</li>
               </ul>
             </div>
-            <div class="copyright">
+            <div className="copyright">
               <p>©Movie Stream. All Rights Reserved</p>
             </div>
         </div>

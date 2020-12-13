@@ -4,19 +4,29 @@ import {Link} from "react-router-dom";
 import uuid from "uuid";
 
 const Loading = ()=> <div className="loading">Loading...</div>
+const Error = ()=> <div className="error">Oops! Error Loading Page</div>
 
 export default function Series() {
     const [series, setSeries] = useState([]);
     const [isLoading, setLoading] = useState(false);
-    const fetchData = async(e) => {
-        setLoading(true);
-        await fetch("https://raw.githubusercontent.com/StreamCo/react-coding-challenge/master/feed/sample.json")
-        .then(results => results.json())
-        .then(data => {
-           setSeries(data.entries);
-           setLoading(false);
-           console.log(series);
-    })
+    const [error, setError] = useState(false);
+
+
+        const fetchData = async(e) => {
+
+        try{
+            setLoading(true);
+            await fetch("https://raw.githubusercontent.com/StreamCo/react-coding-challenge/master/feed/sample.json")
+            .then(results => results.json())
+            .then(data => {
+            setSeries(data.entries);
+            setLoading(false);
+            })
+        } catch(err){
+            setLoading(false);
+            setError(true);
+            console.log(err);
+        }
 };
 
     useEffect(() => {
@@ -30,7 +40,7 @@ export default function Series() {
            <Header>Popular Series</Header>
            <Link className="back-btn" to="/">Back</Link>  
            <div className="series-list">
-
+           { error ? <Error /> : "" }
            { isLoading ? <Loading /> : series.filter(item => item.programType === "series" && item.releaseYear >= 2010)
            .slice(0, 21)
            .sort((a, b) => a.title > b.title ? 1 : -1)
