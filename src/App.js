@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import Nav from "./components/Nav";
-import Home from "./components/Home";
+import Home from "./components/Home/Home";
 import Movies from "./components/Movies";
 import Series from "./components/Series";
 import Footer from "./components/Footer";

@@ -16,9 +16,11 @@ export default function useFetch() {
             await fetch(url)
             .then(results => results.json())
             .then(data => {
-            setMovies(data.entries);
+           
             setLoading(false);
-            console.log(movies);
+           
+           setMovies(data.entries);
+           return data.entries;
             })
         } catch(err){
             setLoading(false);
@@ -29,9 +31,11 @@ export default function useFetch() {
      };
 
     useEffect(() => {
+       if(movies.length === 0) {
         fetchData();
-    },[]);
+        console.log(movies);
+       }
+    },[movies]);
 
     return [movies, isLoading, error];
 }
-
